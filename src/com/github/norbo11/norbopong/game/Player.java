@@ -1,4 +1,4 @@
-package com.github.norbo11.game;
+package com.github.norbo11.norbopong.game;
 import static org.lwjgl.opengl.GL11.GL_QUADS;
 import static org.lwjgl.opengl.GL11.glBegin;
 import static org.lwjgl.opengl.GL11.glEnd;

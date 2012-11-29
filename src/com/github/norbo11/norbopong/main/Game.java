@@ -17,11 +17,11 @@ import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.TextureLoader;
 import org.newdawn.slick.util.ResourceLoader;
 
-import com.github.norbo11.game.Ball;
-import com.github.norbo11.game.Player;
-import com.github.norbo11.game.states.GameState;
-import com.github.norbo11.game.states.StateGame;
-import com.github.norbo11.game.states.StateGameOver;
+import com.github.norbo11.norbopong.game.Ball;
+import com.github.norbo11.norbopong.game.Player;
+import com.github.norbo11.norbopong.game.states.GameState;
+import com.github.norbo11.norbopong.game.states.StateGame;
+import com.github.norbo11.norbopong.game.states.StateGameOver;
 
 public class Game
 {

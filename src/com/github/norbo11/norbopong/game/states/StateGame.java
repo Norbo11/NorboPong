@@ -1,4 +1,4 @@
-package com.github.norbo11.game.states;
+package com.github.norbo11.norbopong.game.states;
 
 import static com.github.norbo11.norbopong.main.Game.cleanUp;
 import static com.github.norbo11.norbopong.main.Game.drawBorder;

@@ -1,4 +1,4 @@
-package com.github.norbo11.game.states;
+package com.github.norbo11.norbopong.game.states;
 
 public interface GameState
 {

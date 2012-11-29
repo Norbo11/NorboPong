@@ -1,4 +1,4 @@
-package com.github.norbo11.game;
+package com.github.norbo11.norbopong.game;
 
 import org.lwjgl.util.vector.Vector2f;
 

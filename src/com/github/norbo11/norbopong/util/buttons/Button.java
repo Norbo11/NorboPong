@@ -4,7 +4,7 @@ import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 import org.newdawn.slick.Color;
 
-import com.github.norbo11.game.Entity;
+import com.github.norbo11.norbopong.game.Entity;
 import com.github.norbo11.norbopong.main.Game;
 import com.github.norbo11.norbopong.util.MouseManager;
 

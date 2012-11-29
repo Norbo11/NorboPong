@@ -1,6 +1,6 @@
 package com.github.norbo11.norbopong.util;
 
-import com.github.norbo11.game.Entity;
+import com.github.norbo11.norbopong.game.Entity;
 import com.github.norbo11.norbopong.main.Game;
 
 public class CollisionManager
