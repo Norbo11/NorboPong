@@ -1,12 +1,13 @@
 package com.github.norbo11.norbopong.util;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Random;
 
 public class NumberHelper
 {
     private static Random random = new Random(new Date().getTime());
-    
+
     private static int negativeRandom(int low, int high)
     {
         if (low == high) return low;
@@ -21,7 +22,7 @@ public class NumberHelper
 
         return i + low;
     }
-    
+
     public static int randomNumber(int min, int max)
     {
         boolean negativeInvolved = min < 0 || max < 0;
@@ -30,8 +31,15 @@ public class NumberHelper
         {
             return -1;
         }
-        
+
         if (negativeInvolved) return negativeRandom(min, max);
         else return (min + (int) (Math.random() * ((max - min) + 1)));
+    }
+    
+    public static double round(double unrounded, int precision, int roundingMode)
+    {
+        BigDecimal bd = new BigDecimal(unrounded);
+        BigDecimal rounded = bd.setScale(precision, roundingMode);
+        return rounded.doubleValue();
     }
 }

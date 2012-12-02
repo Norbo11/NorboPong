@@ -10,16 +10,16 @@ import com.github.norbo11.norbopong.util.Color;
 import com.github.norbo11.norbopong.util.DrawingHelper;
 import com.github.norbo11.norbopong.util.ui.Button;
 
-public class StateGameOver implements GameState
+public class StatePause implements GameState
 {
     private ArrayList<Button> buttons = new ArrayList<>();
-    private Button buttonPlay = new Button(Game.SCREEN_WIDTH / 2 - 200, 200, 400, 50, "Play Again", Color.BLUE, Color.GREEN, Button.runnableButtonPlay, new int[]{Keyboard.KEY_SPACE});
+    private Button buttonContinue = new Button(Game.SCREEN_WIDTH / 2 - 200, 200, 400, 50, "Play Again", Color.BLUE, Color.GREEN, Button.runnableButtonContinue, new int[]{Keyboard.KEY_SPACE});
     private Button buttonMainMenu = new Button(Game.SCREEN_WIDTH / 2 - 200, 256, 400, 50, "Main Menu", Color.BLUE, Color.GREEN, Button.runnableButtonMenu, new int[]{Keyboard.KEY_ESCAPE});
     
-    public StateGameOver()
+    public StatePause()
     {
+        buttons.add(buttonContinue);
         buttons.add(buttonMainMenu);
-        buttons.add(buttonPlay);
     }
     
     @Override
@@ -52,7 +52,7 @@ public class StateGameOver implements GameState
     @Override
     public void render()
     {
-        DrawingHelper.drawCenteredText(Game.fontButton, new Vector2f(0, 100), Game.SCREEN_WIDTH, 0, Game.getWinner().getName() + " is the winner!");
+        DrawingHelper.drawCenteredText(Game.fontButton, new Vector2f(0, 100), Game.SCREEN_WIDTH, 0, "Game Paused!");
         for (Button button : buttons)
         {
             button.render();

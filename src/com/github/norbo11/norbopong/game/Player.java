@@ -1,57 +1,55 @@
 package com.github.norbo11.norbopong.game;
-import static org.lwjgl.opengl.GL11.GL_QUADS;
-import static org.lwjgl.opengl.GL11.glBegin;
-import static org.lwjgl.opengl.GL11.glEnd;
-import static org.lwjgl.opengl.GL11.glVertex2f;
 
 import com.github.norbo11.norbopong.main.Game;
-import com.github.norbo11.norbopong.util.CollisionManager;
+import com.github.norbo11.norbopong.util.CollisionHelper;
+import com.github.norbo11.norbopong.util.interfaces.RGBColor;
 
 public class Player extends Entity
 {
-    public static final int WIDTH = 25;
-    public static final int HEIGHT = 100;
-    
-    public Player(int x, int y)
+    public Player(int x, int y, int width, int height, float speed, RGBColor color, String name)
     {
-        super(x, y);
-        
-        setSpeed(1f);
-        setWidth(WIDTH);
-        setHeight(HEIGHT);
+        super(x, y, width, height, speed, color);
+
+        this.name = name;
     }
     
-    @Override
-    public void render()
+    public Player(int x, int y, int width, int height, float speed, RGBColor color)
     {
-        glBegin(GL_QUADS);
-            glVertex2f(position.x, position.y);
-            glVertex2f(position.x + getWidth(), position.y);
-            glVertex2f(position.x + getWidth(), position.y + getHeight());
-            glVertex2f(position.x, position.y + getHeight());
-        glEnd();
+        this(x, y, width, height, speed, color, "");
+     }
+
+    public String getName()
+    {
+        return name;
     }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+    
+    private String name;
 
     @Override
     public void handleLogic()
-    {        
+    {
         position.x += velocity.x;
         position.y += velocity.y;
-        
-        String borderCollision = CollisionManager.checkCollisionWithBorder(this);
-        
+
+        String borderCollision = CollisionHelper.checkCollisionWithBorder(this);
+
         switch (borderCollision)
         {
-            case "top":
+            case "bottom":
                 position.y = Game.BORDER_WIDTH;
                 break;
-            case "bottom":
+            case "top":
                 position.y = Game.SCREEN_HEIGHT - height - Game.BORDER_WIDTH;
                 break;
-            case "left":
+            case "right":
                 position.x = Game.BORDER_WIDTH;
                 break;
-            case "right":
+            case "left":
                 position.x = Game.SCREEN_WIDTH - width - Game.BORDER_WIDTH;
                 break;
         }

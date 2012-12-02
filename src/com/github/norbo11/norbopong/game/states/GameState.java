@@ -2,8 +2,12 @@ package com.github.norbo11.norbopong.game.states;
 
 public interface GameState
 {
-    public void render();
-    public void handleInput();
+    public void handleKeyboardInput();
+
     public void handleLogic();
+
+    public void handleMouseInput();
+
+    public void render();
 
 }
